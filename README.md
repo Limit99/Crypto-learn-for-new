@@ -1,4 +1,25 @@
 # 🪙 Crypto-learn-for-new
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+
+
+
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
+
+
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+
+
+
+
+![Bahasa](https://img.shields.io/badge/Bahasa-Indonesia-red)
+
+
+
+
+![Pemula](https://img.shields.io/badge/Level-Pemula-yellow)
 
 > Belajar blockchain & cryptocurrency dari nol menggunakan Python — dalam Bahasa Indonesia!
 
