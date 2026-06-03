@@ -6,10 +6,10 @@
 
 | No | Topik | Status |
 |----|-------|--------|
-| 01 | Blockchain Basics | 🚧 Coming soon |
-| 02 | Kriptografi Dasar | 🚧 Coming soon |
-| 03 | Price Tracker | 🚧 Coming soon |
-| 04 | DeFi Basics | 🚧 Coming soon |
+| 01 | Blockchain Basics | ✅️ Done |
+| 02 | Kriptografi Dasar | ✅️ Done |
+| 03 | Price Tracker | ✅️ Done |
+| 04 | DeFi Basics | ✅️ Done |
 
 ## 🛠️ Teknologi
 - Python 3.x
