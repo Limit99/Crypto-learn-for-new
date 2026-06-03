@@ -1,5 +1,6 @@
 # 🧱 01 - Blockchain Learning
 ![Topic](https://img.shields.io/badge/Topik-Blockchain-orange?logo=bitcoin)
+![Level](https://img.shields.io/badge/Level-Pemula-brightgreen)
 
 
 ## 🤔 Apa itu Blockchain?
@@ -44,3 +45,12 @@ Setiap block berisi 4 hal:
 3. Ketik perintah berikut:
 ```bash
 python simple_block.py
+```
+## 🌍 Contoh Blockchain di Dunia Nyata
+
+| Nama | Kegunaan |
+|------|----------|
+| Bitcoin | Mata uang digital |
+| Ethereum | Smart contract & DeFi |
+| Solana | Transaksi super cepat |
+| Polygon | Biaya transaksi murah |
