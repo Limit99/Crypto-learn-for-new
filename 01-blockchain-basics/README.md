@@ -1,5 +1,6 @@
 # 🧱 01 - Blockchain Learning
-https://img.shields.io/badge/Topik-Blockchain-orange?logo=bitcoin
+![Topic](https://img.shields.io/badge/Topik-Blockchain-orange?logo=bitcoin)
+
 
 ## 🤔 Apa itu Blockchain?
 
