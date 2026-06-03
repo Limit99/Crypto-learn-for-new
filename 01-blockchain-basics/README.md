@@ -26,18 +26,21 @@ Setiap block berisi 4 hal:
 
 ---
 
-## 🔐 Kenapa Blockchain Aman?
-
-Karena setiap block **terhubung** ke block sebelumnya lewat hash.
-Kalau ada yang coba ubah 1 data saja → semua hash berubah →
-semua orang langsung tahu ada yang curang! 😎
-
----
-
 ## 📄 File di Folder Ini
 
 - `simple_block.py` — Simulasi membuat blockchain sederhana dengan Python
+  - Membuat class Block dengan data, hash, dan timestamp
+  - Merangkai 3 block menjadi blockchain mini
+  - Membuktikan setiap block terhubung lewat hash
 
 ## ▶️ Cara Jalankan
+
+### Persyaratan
+- Python 3.x sudah terinstall di komputermu
+
+### Langkah-langkah
+1. Download file `simple_block.py`
+2. Buka terminal/CMD di folder yang sama
+3. Ketik perintah berikut:
 ```bash
 python simple_block.py
