@@ -33,19 +33,24 @@ Setiap block berisi 4 hal:
   - Membuat class Block dengan data, hash, dan timestamp
   - Merangkai 3 block menjadi blockchain mini
   - Membuktikan setiap block terhubung lewat hash
+ 
+- `simple_chain.py` — Simulasi blockchain lengkap dengan validasi
+  - Membuat Genesis Block (block pertama)
+  - Merangkai banyak block menjadi blockchain
+  - Mengecek validitas seluruh chain
+  - Simulasi apa yang terjadi kalau ada yang manipulasi data
 
 ## ▶️ Cara Jalankan
-
-### Persyaratan
-- Python 3.x sudah terinstall di komputermu
-
-### Langkah-langkah
-1. Download file `simple_block.py`
-2. Buka terminal/CMD di folder yang sama
-3. Ketik perintah berikut:
+### 🔹 simple_block.py
 ```bash
 python simple_block.py
 ```
+### 🔹 simple_chain.py
+```bash
+
+python simple_chain.py
+```
+
 ## 🌍 Contoh Blockchain di Dunia Nyata
 
 | Nama | Kegunaan |
@@ -54,3 +59,10 @@ python simple_block.py
 | Ethereum | Smart contract & DeFi |
 | Solana | Transaksi super cepat |
 | Polygon | Biaya transaksi murah |
+
+## ⛓️ Apa itu Genesis Block?
+
+Genesis Block adalah **block pertama** dalam sebuah blockchain.
+- Tidak punya block sebelumnya
+- Previous Hash-nya = "0"
+- Ibarat **halaman pertama** dalam buku catatan blockchain
