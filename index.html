@@ -18,19 +18,26 @@
     }
     header h1 { font-size: 2.5em; color: #000; }
     header p { font-size: 1.2em; color: #111; margin-top: 10px; }
+    .badge-container { margin-top: 15px; }
     .badge {
       display: inline-block;
       background: #000;
       color: #f7931a;
       padding: 5px 15px;
       border-radius: 20px;
-      margin-top: 15px;
+      margin: 5px;
       font-size: 0.9em;
     }
     .container {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-top: 50px;
+      color: #f7931a;
     }
     .grid {
       display: grid;
@@ -49,20 +56,34 @@
     .card:hover { transform: translateY(-5px); }
     .card .icon { font-size: 2.5em; margin-bottom: 10px; }
     .card h3 { color: #f7931a; margin-bottom: 8px; }
-    .card p { font-size: 0.9em; color: #8b949e; }
-    h2 {
-      text-align: center;
-      font-size: 1.8em;
-      margin-top: 50px;
-      color: #f7931a;
+    .card p { font-size: 0.85em; color: #8b949e; margin-top: 5px; }
+    .card .files {
+      margin-top: 10px;
+      font-size: 0.8em;
+      color: #58a6ff;
     }
-    .footer {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .stat-card {
+      background: #161b22;
+      border: 1px solid #f7931a;
+      border-radius: 12px;
+      padding: 20px;
       text-align: center;
-      padding: 40px;
-      color: #8b949e;
+    }
+    .stat-card .number {
+      font-size: 2.5em;
+      color: #f7931a;
+      font-weight: bold;
+    }
+    .stat-card .label {
       font-size: 0.9em;
-      margin-top: 50px;
-      border-top: 1px solid #30363d;
+      color: #8b949e;
+      margin-top: 5px;
     }
     .btn {
       display: inline-block;
@@ -73,6 +94,16 @@
       text-decoration: none;
       font-weight: bold;
       margin-top: 20px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.8; }
+    .footer {
+      text-align: center;
+      padding: 40px;
+      color: #8b949e;
+      font-size: 0.9em;
+      margin-top: 50px;
+      border-top: 1px solid #30363d;
     }
   </style>
 </head>
@@ -81,31 +112,98 @@
 <header>
   <h1>🪙 Crypto Learn for New</h1>
   <p>Belajar Blockchain & Cryptocurrency dari Nol</p>
-  <span class="badge">🇮🇩 Dalam Bahasa Indonesia</span>
+  <div class="badge-container">
+    <span class="badge">🐍 Python 3.x</span>
+    <span class="badge">🇮🇩 Bahasa Indonesia</span>
+    <span class="badge">⭐ Level Pemula</span>
+    <span class="badge">✅ Open Source</span>
+  </div>
 </header>
 
 <div class="container">
+
+  <!-- Statistik -->
+  <h2>📊 Statistik Repo</h2>
+  <div class="stats">
+    <div class="stat-card">
+      <div class="number">4</div>
+      <div class="label">Folder Materi</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">8</div>
+      <div class="label">File Python</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">100%</div>
+      <div class="label">Bahasa Indonesia</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">0</div>
+      <div class="label">Biaya (Gratis!)</div>
+    </div>
+  </div>
+
+  <!-- Materi -->
   <h2>📚 Materi yang Dipelajari</h2>
   <div class="grid">
     <div class="card">
       <div class="icon">🧱</div>
       <h3>Blockchain Basics</h3>
       <p>Pelajari cara kerja blockchain dari nol</p>
+      <div class="files">
+        📄 simple_block.py<br>
+        📄 simple_chain.py
+      </div>
     </div>
     <div class="card">
       <div class="icon">🔐</div>
       <h3>Kriptografi Dasar</h3>
-      <p>Pahami hashing & keamanan crypto</p>
+      <p>Pahami hashing & tanda tangan digital</p>
+      <div class="files">
+        📄 hashing.py<br>
+        📄 digital_signature.py
+      </div>
     </div>
     <div class="card">
       <div class="icon">📈</div>
       <h3>Price Tracker</h3>
-      <p>Ambil harga crypto secara live</p>
+      <p>Ambil harga crypto & notifikasi otomatis</p>
+      <div class="files">
+        📄 fetch_prices.py<br>
+        📄 price_alert.py
+      </div>
     </div>
     <div class="card">
       <div class="icon">🏦</div>
       <h3>DeFi Basics</h3>
-      <p>Simulasi AMM seperti Uniswap</p>
+      <p>Simulasi AMM & kalkulator keuntungan</p>
+      <div class="files">
+        📄 amm_simulator.py<br>
+        📄 yield_calculator.py
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol GitHub -->
+  <div style="text-align:center; margin-top: 50px;">
+    <h2>🚀 Mulai Belajar Sekarang!</h2>
+    <p style="color:#8b949e; margin-top:10px;">
+      Semua materi gratis & open source 🎉
+    </p>
+    <a class="btn" href="https://github.com/Limit99/Crypto-learn-for-new">
+      ⭐ Lihat di GitHub
+    </a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Dibuat dengan ❤️ oleh Jalaluddin99 | MIT License</p>
+  <p style="margin-top:5px;">github.com/Limit99/Crypto-learn-for-new</p>
+</div>
+
+</body>
+</html>      <p>Simulasi AMM seperti Uniswap</p>
     </div>
   </div>
 
