@@ -48,6 +48,26 @@ menjadi **kode unik dengan panjang tetap**.
 - `hashing.py` — Simulasi hashing SHA-256 dengan Python
   - Membuat fungsi hash sederhana
   - Membuktikan perubahan kecil = hash berbeda total
+- `digital_signature.py` — Simulasi tanda tangan digital
+  - Membuat kunci privat & kunci publik
+  - Menandatangani transaksi secara digital
+  - Verifikasi keaslian transaksi
+  - Simulasi pencegahan pemalsuan transaksi
+ 
+## ✍️ Apa itu Tanda Tangan Digital?
+
+Bayangkan kamu punya **stempel pribadi** yang:
+- Hanya kamu yang bisa membuat
+- Semua orang bisa memverifikasi keasliannya
+- Tidak bisa dipalsukan oleh siapapun
+
+Itulah **Tanda Tangan Digital!** 🔏
+
+| Istilah | Penjelasan |
+|---------|-----------|
+| Kunci Privat | Password rahasia, jangan sampai bocor! |
+| Kunci Publik | Alamat wallet yang bisa dibagikan |
+| Tanda Tangan | Bukti bahwa kamu yang melakukan transaksi |
 
 ## ▶️ Cara Jalankan
 
@@ -58,5 +78,10 @@ menjadi **kode unik dengan panjang tetap**.
 1. Download file `hashing.py`
 2. Buka terminal/CMD
 3. Ketik perintah:
+### 🔹 hashing.py
 ```bash
 python hashing.py
+```
+### 🔹 digital_signature.py
+```bash
+python digital_signature.py
