@@ -40,7 +40,14 @@ Setiap block berisi 4 hal:
   - Mengecek validitas seluruh chain
   - Simulasi apa yang terjadi kalau ada yang manipulasi data
 
-## ▶️ Cara Jalankan
+#### Persyaratan
+- Python 3.x sudah terinstall di komputermu
+
+### Langkah-langkah
+1. Download file yang ingin dijalankan
+2. Buka terminal/CMD di folder yang sama
+3. Ketik perintah:
+
 ### 🔹 simple_block.py
 ```bash
 python simple_block.py
