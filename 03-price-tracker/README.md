@@ -48,6 +48,26 @@ dengan sumber data di internet.
   - Koneksi ke API CoinGecko
   - Menampilkan harga dalam USD dan IDR
   - Bisa dicek untuk Bitcoin, Ethereum, Solana
+- `price_alert.py` — Sistem notifikasi harga crypto otomatis
+  - Memantau 4 koin sekaligus (BTC, ETH, SOL, MATIC)
+  - Alert otomatis kalau harga naik atau turun
+  - Simulasi sistem alert seperti di Pintu & Tokocrypto
+
+## 🔔 Apa itu Price Alert?
+
+Bayangkan kamu punya **asisten pribadi** yang:
+- Memantau harga crypto 24 jam
+- Memberitahu kalau harga naik drastis → saatnya JUAL
+- Memberitahu kalau harga turun drastis → saatnya BELI
+
+Itulah **Price Alert!** 📲
+
+| Koin | Batas Atas | Batas Bawah |
+|------|-----------|-------------|
+| Bitcoin | $120,000 | $90,000 |
+| Ethereum | $5,000 | $2,000 |
+| Solana | $300 | $100 |
+| Polygon | $2 | $0.5 |
 
 ## ▶️ Cara Jalankan
 
@@ -59,5 +79,10 @@ dengan sumber data di internet.
 1. Download file `fetch_prices.py`
 2. Buka terminal/CMD
 3. Ketik perintah:
+### 🔹 fetch_prices.py
 ```bash
 python fetch_prices.py
+```
+### 🔹 price_alert.py
+```bash
+python price_alert.py
