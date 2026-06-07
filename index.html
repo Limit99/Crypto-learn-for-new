@@ -6,221 +6,351 @@
   <title>Crypto Learn for New</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #0d1117;
       color: #e6edf3;
     }
-    header {
-      background: linear-gradient(135deg, #f7931a, #f0b90b);
-      padding: 60px 20px;
-      text-align: center;
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13,17,23,0.95);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f7931a;
+      z-index: 100;
     }
-    header h1 { font-size: 2.5em; color: #000; }
-    header p { font-size: 1.2em; color: #111; margin-top: 10px; }
-    .badge-container { margin-top: 15px; }
+    nav .logo { color: #f7931a; font-weight: bold; font-size: 1.2em; }
+    nav a {
+      color: #e6edf3;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.9em;
+    }
+    nav a:hover { color: #f7931a; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0d1117, #1a1f2e, #0d1117);
+      padding: 120px 20px 80px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+    }
+    .hero .coin { font-size: 4em; animation: bounce 2s infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      background: linear-gradient(90deg, #f7931a, #f0b90b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 20px 0 10px;
+    }
+    .hero p { color: #8b949e; font-size: 1.1em; margin-bottom: 30px; }
+    .badge-row { margin: 20px 0; }
     .badge {
       display: inline-block;
-      background: #000;
-      color: #f7931a;
       padding: 5px 15px;
       border-radius: 20px;
       margin: 5px;
-      font-size: 0.9em;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      text-align: center;
-      font-size: 1.8em;
-      margin-top: 50px;
-      color: #f7931a;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card .icon { font-size: 2.5em; margin-bottom: 10px; }
-    .card h3 { color: #f7931a; margin-bottom: 8px; }
-    .card p { font-size: 0.85em; color: #8b949e; margin-top: 5px; }
-    .card .files {
-      margin-top: 10px;
-      font-size: 0.8em;
-      color: #58a6ff;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .stat-card {
-      background: #161b22;
-      border: 1px solid #f7931a;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
-    .stat-card .number {
-      font-size: 2.5em;
-      color: #f7931a;
+      font-size: 0.85em;
       font-weight: bold;
     }
-    .stat-card .label {
-      font-size: 0.9em;
-      color: #8b949e;
-      margin-top: 5px;
-    }
+    .badge-orange { background: #f7931a22; color: #f7931a; border: 1px solid #f7931a; }
+    .badge-blue { background: #388bfd22; color: #58a6ff; border: 1px solid #388bfd; }
+    .badge-green { background: #2ea04322; color: #3fb950; border: 1px solid #2ea043; }
+    .badge-red { background: #da363322; color: #f85149; border: 1px solid #da3633; }
+    .btn-group { margin-top: 30px; }
     .btn {
       display: inline-block;
-      background: #f7931a;
-      color: #000;
       padding: 12px 30px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 20px;
-      transition: opacity 0.2s;
+      margin: 5px;
+      transition: all 0.2s;
     }
-    .btn:hover { opacity: 0.8; }
-    .footer {
+    .btn-primary { background: #f7931a; color: #000; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary { background: transparent; color: #f7931a; border: 2px solid #f7931a; }
+    .btn-secondary:hover { background: #f7931a22; }
+
+    /* STATS */
+    .stats-section {
+      padding: 60px 20px;
       text-align: center;
-      padding: 40px;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 30px auto 0;
+    }
+    .stat-card {
+      background: #0d1117;
+      border: 1px solid #f7931a44;
+      border-radius: 12px;
+      padding: 25px;
+    }
+    .stat-number { font-size: 2.5em; color: #f7931a; font-weight: bold; }
+    .stat-label { color: #8b949e; font-size: 0.9em; margin-top: 5px; }
+
+    /* MATERI */
+    .materi-section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      font-size: 1.8em;
+      color: #f7931a;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 40px;
+    }
+    .materi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .materi-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .materi-card:hover {
+      transform: translateY(-5px);
+      border-color: #f7931a;
+      box-shadow: 0 8px 25px #f7931a22;
+    }
+    .materi-card .icon { font-size: 2.5em; margin-bottom: 15px; }
+    .materi-card h3 { color: #f7931a; margin-bottom: 8px; }
+    .materi-card p { color: #8b949e; font-size: 0.9em; margin-bottom: 15px; }
+    .file-list { list-style: none; }
+    .file-list li {
+      font-size: 0.8em;
+      color: #58a6ff;
+      padding: 3px 0;
+    }
+    .file-list li::before { content: "📄 "; }
+
+    /* ROADMAP */
+    .roadmap-section {
+      padding: 60px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      border-bottom: 1px solid #30363d;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto 0;
+    }
+    .roadmap-card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .roadmap-card .step {
+      background: #f7931a;
+      color: #000;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto 15px;
+    }
+    .roadmap-card h4 { color: #e6edf3; margin-bottom: 8px; }
+    .roadmap-card p { color: #8b949e; font-size: 0.85em; }
+
+    /* CTA */
+    .cta-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .cta-section h2 { font-size: 2em; color: #f7931a; margin-bottom: 15px; }
+    .cta-section p { color: #8b949e; margin-bottom: 30px; }
+
+    /* FOOTER */
+    footer {
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      padding: 30px;
+      text-align: center;
       color: #8b949e;
       font-size: 0.9em;
-      margin-top: 50px;
-      border-top: 1px solid #30363d;
     }
+    footer a { color: #f7931a; text-decoration: none; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>🪙 Crypto Learn for New</h1>
-  <p>Belajar Blockchain & Cryptocurrency dari Nol</p>
-  <div class="badge-container">
-    <span class="badge">🐍 Python 3.x</span>
-    <span class="badge">🇮🇩 Bahasa Indonesia</span>
-    <span class="badge">⭐ Level Pemula</span>
-    <span class="badge">✅ Open Source</span>
+<!-- NAVBAR -->
+<nav>
+  <span class="logo">🪙 Crypto Learn</span>
+  <div>
+    <a href="#materi">Materi</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="https://github.com/Limit99/Crypto-learn-for-new">GitHub</a>
   </div>
-</header>
+</nav>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero">
+  <div class="coin">🪙</div>
+  <h1>Crypto Learn for New</h1>
+  <p>Belajar Blockchain & Cryptocurrency dari Nol — dalam Bahasa Indonesia</p>
+  <div class="badge-row">
+    <span class="badge badge-blue">🐍 Python 3.x</span>
+    <span class="badge badge-red">🇮🇩 Bahasa Indonesia</span>
+    <span class="badge badge-green">✅ Open Source</span>
+    <span class="badge badge-orange">⭐ Level Pemula</span>
+  </div>
+  <div class="btn-group">
+    <a class="btn btn-primary" href="https://github.com/Limit99/Crypto-learn-for-new">
+      ⭐ Lihat di GitHub
+    </a>
+    <a class="btn btn-secondary" href="#materi">
+      📚 Mulai Belajar
+    </a>
+  </div>
+</section>
 
-  <!-- Statistik -->
-  <h2>📊 Statistik Repo</h2>
-  <div class="stats">
+<!-- STATS -->
+<section class="stats-section">
+  <h2 class="section-title">📊 Statistik Repo</h2>
+  <div class="stats-grid">
     <div class="stat-card">
-      <div class="number">4</div>
-      <div class="label">Folder Materi</div>
+      <div class="stat-number">4</div>
+      <div class="stat-label">Folder Materi</div>
     </div>
     <div class="stat-card">
-      <div class="number">8</div>
-      <div class="label">File Python</div>
+      <div class="stat-number">8</div>
+      <div class="stat-label">File Python</div>
     </div>
     <div class="stat-card">
-      <div class="number">100%</div>
-      <div class="label">Bahasa Indonesia</div>
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Bahasa Indonesia</div>
     </div>
     <div class="stat-card">
-      <div class="number">0</div>
-      <div class="label">Biaya (Gratis!)</div>
+      <div class="stat-number">0</div>
+      <div class="stat-label">Biaya (Gratis!)</div>
     </div>
   </div>
+</section>
 
-  <!-- Materi -->
-  <h2>📚 Materi yang Dipelajari</h2>
-  <div class="grid">
-    <div class="card">
+<!-- MATERI -->
+<section class="materi-section" id="materi">
+  <h2 class="section-title">📚 Materi yang Dipelajari</h2>
+  <p class="section-sub">Semua materi dibuat khusus untuk pemula — tidak perlu pengalaman coding!</p>
+  <div class="materi-grid">
+    <div class="materi-card">
       <div class="icon">🧱</div>
       <h3>Blockchain Basics</h3>
-      <p>Pelajari cara kerja blockchain dari nol</p>
-      <div class="files">
-        📄 simple_block.py<br>
-        📄 simple_chain.py
-      </div>
+      <p>Pelajari cara kerja blockchain dari nol hingga simulasi mining</p>
+      <ul class="file-list">
+        <li>simple_block.py</li>
+        <li>simple_chain.py</li>
+        <li>proof_of_work.py</li>
+        <li>wallet_generator.py</li>
+        <li>merkle_tree.py</li>
+      </ul>
     </div>
-    <div class="card">
+    <div class="materi-card">
       <div class="icon">🔐</div>
       <h3>Kriptografi Dasar</h3>
-      <p>Pahami hashing & tanda tangan digital</p>
-      <div class="files">
-        📄 hashing.py<br>
-        📄 digital_signature.py
-      </div>
+      <p>Pahami hashing SHA-256 dan tanda tangan digital</p>
+      <ul class="file-list">
+        <li>hashing.py</li>
+        <li>digital_signature.py</li>
+      </ul>
     </div>
-    <div class="card">
+    <div class="materi-card">
       <div class="icon">📈</div>
       <h3>Price Tracker</h3>
-      <p>Ambil harga crypto & notifikasi otomatis</p>
-      <div class="files">
-        📄 fetch_prices.py<br>
-        📄 price_alert.py
-      </div>
+      <p>Ambil harga crypto live & sistem notifikasi otomatis</p>
+      <ul class="file-list">
+        <li>fetch_prices.py</li>
+        <li>price_alert.py</li>
+      </ul>
     </div>
-    <div class="card">
+    <div class="materi-card">
       <div class="icon">🏦</div>
       <h3>DeFi Basics</h3>
-      <p>Simulasi AMM & kalkulator keuntungan</p>
-      <div class="files">
-        📄 amm_simulator.py<br>
-        📄 yield_calculator.py
-      </div>
+      <p>Simulasi AMM seperti Uniswap & kalkulator keuntungan DeFi</p>
+      <ul class="file-list">
+        <li>amm_simulator.py</li>
+        <li>yield_calculator.py</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <!-- Tombol GitHub -->
-  <div style="text-align:center; margin-top: 50px;">
-    <h2>🚀 Mulai Belajar Sekarang!</h2>
-    <p style="color:#8b949e; margin-top:10px;">
-      Semua materi gratis & open source 🎉
-    </p>
-    <a class="btn" href="https://github.com/Limit99/Crypto-learn-for-new">
-      ⭐ Lihat di GitHub
-    </a>
-  </div>
-
-</div>
-
-<div class="footer">
-  <p>Dibuat dengan ❤️ oleh Jalaluddin99 | MIT License</p>
-  <p style="margin-top:5px;">github.com/Limit99/Crypto-learn-for-new</p>
-</div>
-
-</body>
-</html>      <p>Simulasi AMM seperti Uniswap</p>
+<!-- ROADMAP -->
+<section class="roadmap-section" id="roadmap">
+  <h2 class="section-title" style="text-align:center;">🗺️ Roadmap Belajar</h2>
+  <p class="section-sub" style="text-align:center; color:#8b949e; margin-bottom:0;">
+    Ikuti urutan ini untuk hasil belajar yang optimal
+  </p>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="step">1</div>
+      <h4>Blockchain Basics</h4>
+      <p>Mulai dari sini — pahami konsep dasar blockchain</p>
+    </div>
+    <div class="roadmap-card">
+      <div class="step">2</div>
+      <h4>Kriptografi</h4>
+      <p>Pelajari keamanan di balik crypto</p>
+    </div>
+    <div class="roadmap-card">
+      <div class="step">3</div>
+      <h4>Price Tracker</h4>
+      <p>Buat tools pantau harga crypto</p>
+    </div>
+    <div class="roadmap-card">
+      <div class="step">4</div>
+      <h4>DeFi Basics</h4>
+      <p>Pelajari dunia keuangan terdesentralisasi</p>
     </div>
   </div>
+</section>
 
-  <div style="text-align:center; margin-top: 50px;">
-    <h2>🚀 Mulai Belajar Sekarang!</h2>
-    <p style="color:#8b949e; margin-top:10px;">
-      Semua materi gratis & open source
-    </p>
-    <a class="btn" href="https://github.com/Limit99/Crypto-learn-for-new">
-      ⭐ Lihat di GitHub
-    </a>
-  </div>
-</div>
+<!-- CTA -->
+<section class="cta-section">
+  <h2>🚀 Siap Mulai Belajar?</h2>
+  <p>Semua materi gratis, open source, dan dalam Bahasa Indonesia!</p>
+  <a class="btn btn-primary" href="https://github.com/Limit99/Crypto-learn-for-new">
+    ⭐ Clone Repo Sekarang
+  </a>
+</section>
 
-<div class="footer">
-  <p>Dibuat dengan ❤️ oleh Jalaluddin99 | MIT License</p>
-</div>
+<!-- FOOTER -->
+<footer>
+  <p>Dibuat dengan ❤️ oleh <a href="https://github.com/Limit99">Jalaluddin99</a></p>
+  <p style="margin-top:8px;">MIT License · github.com/Limit99/Crypto-learn-for-new</p>
+</footer>
 
 </body>
   </html>
